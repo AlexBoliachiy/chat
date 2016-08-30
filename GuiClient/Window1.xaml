@@ -1,0 +1,43 @@
+﻿<Window x:Class="GuiClient.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuiClient"
+        mc:Ignorable="d"
+        Title="MyMessanger" Height="310" Width="600">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" MouseDoubleClick="return_click">
+            <TextBlock TextDecorations="Underline" Foreground="Blue" >Return to Login</TextBlock> </Label>
+        <Label Grid.Row="0" Margin="10,0,137,0" FontWeight="Bold" Grid.Column="1">Please fill up all fields correct</Label>
+        <Label  Grid.Row="1">_Login</Label>
+        <Label  Grid.Row="2">_E-mail</Label>
+        <Label  Grid.Row="4">_Password*:</Label>
+        <Label  Grid.Row="5" >Password _repeat*:</Label>
+        <Label  Grid.Row="6" >Sex:</Label>
+        <TextBox Name="txtLogin" Grid.Row="1" Grid.Column="1"  VerticalAlignment="Top" />
+        <TextBox  Name="txtEmail" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" />
+        <PasswordBox  Name="txtPassword" Grid.Row="4" Grid.Column="1" Height="19" VerticalAlignment="Top" />
+        <PasswordBox Name="txtPasswordR" Grid.Row="5" Grid.Column="1" VerticalAlignment="Top" />
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <RadioButton GroupName="sex" Name="Male" Margin="20, 0, 20,0">Male</RadioButton>
+            <RadioButton GroupName="sex" Name="Female">Female</RadioButton>
+        </StackPanel>
+        <Button x:Name="button" Click="Reg_Click" Content="Registrate" Grid.Column="1" HorizontalAlignment="Left" Margin="203,80,0,-50" Grid.Row="6" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

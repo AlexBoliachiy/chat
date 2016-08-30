@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Microsoft.ServiceModel.Samples" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Microsoft.ServiceModel.Samples/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/GettingStarted/?xsd=xsd0" namespace="http://Microsoft.ServiceModel.Samples" />
+      <xsd:import schemaLocation="http://localhost:8000/GettingStarted/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/GettingStarted/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService2" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMessanger_AddFriend_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFriend" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_AddFriend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFriendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_Ban_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ban" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_Ban_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_Authorization_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authorization" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_Authorization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_RegisterNewUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewUser" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_RegisterNewUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterNewUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_GetNewMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_GetNewMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_AddEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmail" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_AddEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_AddInformation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddInformation" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_AddInformation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_AddGender_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGender" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_AddGender_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGenderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_getUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUser" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_getUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_getAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_getAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_Disconnect_InputMessage">
+    <wsdl:part name="parameters" element="tns:Disconnect" />
+  </wsdl:message>
+  <wsdl:message name="IMessanger_Disconnect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisconnectResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMessanger">
+    <wsdl:operation name="AddFriend">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/AddFriend" message="tns:IMessanger_AddFriend_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/AddFriendResponse" message="tns:IMessanger_AddFriend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ban">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/Ban" message="tns:IMessanger_Ban_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/BanResponse" message="tns:IMessanger_Ban_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authorization">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/Authorization" message="tns:IMessanger_Authorization_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/AuthorizationResponse" message="tns:IMessanger_Authorization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterNewUser">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/RegisterNewUser" message="tns:IMessanger_RegisterNewUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/RegisterNewUserResponse" message="tns:IMessanger_RegisterNewUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/SendMessage" message="tns:IMessanger_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/SendMessageResponse" message="tns:IMessanger_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMessage">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/GetNewMessage" message="tns:IMessanger_GetNewMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/GetNewMessageResponse" message="tns:IMessanger_GetNewMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmail">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/AddEmail" message="tns:IMessanger_AddEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/AddEmailResponse" message="tns:IMessanger_AddEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInformation">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/AddInformation" message="tns:IMessanger_AddInformation_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/AddInformationResponse" message="tns:IMessanger_AddInformation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGender">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/AddGender" message="tns:IMessanger_AddGender_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/AddGenderResponse" message="tns:IMessanger_AddGender_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/Search" message="tns:IMessanger_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/SearchResponse" message="tns:IMessanger_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/getUser" message="tns:IMessanger_getUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/getUserResponse" message="tns:IMessanger_getUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAdmin">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/getAdmin" message="tns:IMessanger_getAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/getAdminResponse" message="tns:IMessanger_getAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Disconnect">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/Disconnect" message="tns:IMessanger_Disconnect_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/IMessanger/DisconnectResponse" message="tns:IMessanger_Disconnect_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
